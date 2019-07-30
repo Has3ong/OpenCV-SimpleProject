@@ -9,3 +9,10 @@
 * Image_Processing
 * Image_Pre_Processing
 * Text_Recognization
+
+
+#### Reference
+
+* https://opencv.org/
+* https://docs.opencv.org/
+* https://www.wikipedia.org
