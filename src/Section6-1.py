@@ -31,6 +31,7 @@ def PreProcessing():
     gray = cv2.GaussianBlur(gray, (3, 3), 0)
     edged = cv2.Canny(gray, 75, 200)
 
+    # Edge Detection
     cv2.imshow("Image", image)
     cv2.imshow("Edged", edged)
 
@@ -50,6 +51,7 @@ def PreProcessing():
             screenCnt = approx
             break
 
+    # Outline
     cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
     cv2.imshow("Outline", image)
 
@@ -75,6 +77,7 @@ def PreProcessing():
     M = cv2.getPerspectiveTransform(rect, dst)
     warped = cv2.warpPerspective(orig, M, (maxWidth, maxHeight))
 
+    # Perspective
     cv2.imshow("Warped", warped)
 
     cv2.waitKey(0)
@@ -85,6 +88,7 @@ def PreProcessing():
     warped = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
     warped = cv2.adaptiveThreshold(warped, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 21, 10)
 
+    # Scan
     cv2.imshow("Original", orig)
     cv2.imshow("Scanned", warped)
     cv2.imwrite('Output.png', warped)
