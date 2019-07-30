@@ -15,4 +15,4 @@
 
 * https://opencv.org/
 * https://docs.opencv.org/
-* https://www.wikipedia.org
+* https://www.wikipedia.org/
