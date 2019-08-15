@@ -1,9 +1,7 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 from matplotlib import cm
 import os
-
 
 def create_rgb(i):
     x = np.array(cm.tab10(i))[:3]*255
@@ -50,11 +48,9 @@ while True:
         segments = np.zeros(image.shape, dtype=np.uint8)
 
     elif k > 0 and chr(k).isdigit():
-
         current_marker = int(chr(k))
 
     if marks_updated:
-
         marker_image_copy = marker_image.copy()
         cv2.watershed(image, marker_image_copy)
 
@@ -62,7 +58,6 @@ while True:
 
         for color_ind in range(n_markers):
             segments[marker_image_copy == (color_ind)] = colors[color_ind]
-
         marks_updated = False
 
 cv2.destroyAllWindows()
